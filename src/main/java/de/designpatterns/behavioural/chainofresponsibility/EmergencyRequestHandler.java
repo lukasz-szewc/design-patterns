@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package de.designpatterns.behavioural.chainofresponsibility;
 
 
@@ -15,7 +11,6 @@ public class EmergencyRequestHandler implements RequestHandler {
     @Override
     public void handleRequest(Request request) {
         if (request.isEmergencyRequest()) {
-
             System.out.printf("I am %s instance, and I have just handled priority request: %s", getClass().getSimpleName(), request);
             System.out.println();
         } else {
