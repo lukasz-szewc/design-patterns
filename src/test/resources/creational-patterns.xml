@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Creational design patterns Test Suite" verbose="1">
+
+    <test name="Creational Patterns Test">
+        <packages>
+            <package name="de.designpatterns.creational"></package>
+        </packages>
+    </test>
+
+
+</suite>

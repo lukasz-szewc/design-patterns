@@ -1,0 +1,30 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package de.designpatterns.creational.singleton;
+
+/**
+ *
+ */
+public class Singleton {
+    private final String content;
+
+    private Singleton() {
+        this.content = "SingletonContent";
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+
+    private static class SingletonHolder {
+        private static Singleton INSTANCE = new Singleton();
+
+    }
+
+}
