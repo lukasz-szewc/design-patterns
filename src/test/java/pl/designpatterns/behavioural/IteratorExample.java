@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural;
 
 import pl.designpatterns.behavioural.iterator.Bag;
@@ -10,9 +6,6 @@ import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class IteratorExample extends DesignPatternTestTemplate {
 
     public IteratorExample() {
@@ -25,7 +18,7 @@ public class IteratorExample extends DesignPatternTestTemplate {
         boolean add = bag.add("foo");
         Assert.assertTrue(add);
         boolean add1 = bag.add("bar");
-        Assert.assertTrue(add1 == false);
+        Assert.assertFalse(add1);
 
         SimpleIterator<String> iterator = bag.getIterator();
 
@@ -35,8 +28,9 @@ public class IteratorExample extends DesignPatternTestTemplate {
             System.out.println(element);
         }
     }
-    @Test(description = "tests more compilcated iterator.")
-    public void testIteratorNr2() {
+
+    @Test(description = "tests more complicated iterator.")
+    public void testSecondIterator() {
         Bag<String> bag = new Bag<String>(14);
         boolean add = bag.add("foo");
         Assert.assertTrue(add);

@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.iterator;
 
-/**
- *
- */
 public class ConcreteIterator<T> implements SimpleIterator<T> {
     private final Object[] array;
     private int position;
@@ -20,16 +13,14 @@ public class ConcreteIterator<T> implements SimpleIterator<T> {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public T next() {
         return (T) array[position++];
     }
 
     @Override
     public boolean hasNext() {
-        if (position == initialSize) {
-            return false;
-        }
-        return true;
+        return position != initialSize;
     }
 
 }
