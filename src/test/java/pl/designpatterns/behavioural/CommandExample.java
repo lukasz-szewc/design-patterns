@@ -7,9 +7,6 @@ import pl.designpatterns.behavioural.command.WebServer;
 import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class CommandExample extends DesignPatternTestTemplate {
 
     public CommandExample() {

@@ -9,7 +9,7 @@ public class DisplayWelcomePageCommand implements DisplayPageCommand {
 
     @Override
     public void execute() {
-        System.out.println("Displaying Welocme page");
+        System.out.println("Displaying Welcome page");
         server.sendResponse("Sending welcome page");
     }
 
