@@ -11,9 +11,6 @@ import pl.designpatterns.behavioural.interpreter.LibraryContext;
 import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class InterpreterExample extends DesignPatternTestTemplate {
 
     public InterpreterExample() {

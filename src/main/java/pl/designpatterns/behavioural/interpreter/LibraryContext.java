@@ -1,15 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.interpreter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class LibraryContext {
     public static final String EMPTY_LIST_OF_BOOKS = "List of Books is empty";
 

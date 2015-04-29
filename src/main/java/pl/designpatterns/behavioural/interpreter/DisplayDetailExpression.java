@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.interpreter;
 
-/**
- *
- * @author Lukasz
- */
 public class DisplayDetailExpression implements ExpressionInterpreter {
 
     public static final String LAST = "last";
