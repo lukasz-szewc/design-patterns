@@ -4,7 +4,7 @@
 
     <test name="Structural Patterns Test">
         <packages>
-            <package name="de.designpatterns.structural"></package>
+            <package name="pl.designpatterns.structural"></package>
         </packages>
     </test>
 

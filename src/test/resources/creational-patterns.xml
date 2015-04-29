@@ -4,7 +4,7 @@
 
     <test name="Creational Patterns Test">
         <packages>
-            <package name="de.designpatterns.creational"></package>
+            <package name="pl.designpatterns.creational"></package>
         </packages>
     </test>
 

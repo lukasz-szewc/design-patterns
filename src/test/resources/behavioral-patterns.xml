@@ -4,7 +4,7 @@
 
     <test name="Behavioural Patterns Test" verbose="1">
         <packages>
-            <package name="de.designpatterns.behavioural"></package>
+            <package name="pl.designpatterns.behavioural"></package>
         </packages>
     </test>
 
