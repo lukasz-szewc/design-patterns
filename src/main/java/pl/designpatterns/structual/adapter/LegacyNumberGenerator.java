@@ -1,17 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.adapter;
 
 import java.util.Random;
 
-/**
- *
- */
 class LegacyNumberGenerator {
 
-    public int[] generateNumber(int first, boolean firstInclusieve, int second, boolean secondInclusive, int howMany) {
+    public int[] generateNumber(int first, boolean firstInclusive, int second, boolean secondInclusive, int howMany) {
         int[] returnArray = new int[howMany];
 
         Random random = new Random();
@@ -20,7 +13,7 @@ class LegacyNumberGenerator {
         for (int counter = 0; counter < howMany; counter++) {
             int generatedInt = random.nextInt(difference) + first;
 
-            if (!firstInclusieve) {
+            if (!firstInclusive) {
                 generatedInt = generatedInt + 1;
             }
 
