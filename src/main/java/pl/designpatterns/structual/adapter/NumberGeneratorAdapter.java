@@ -1,15 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.adapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class NumberGeneratorAdapter implements NumberGenerator {
     private final LegacyNumberGenerator legacyNumberGenerator;
 
