@@ -1,10 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural;
 
-import pl.designpatterns.behavioural.mediator.AuctionCollegue;
+import pl.designpatterns.behavioural.mediator.AuctionColleague;
 import pl.designpatterns.behavioural.mediator.AuctionMediator;
 import pl.designpatterns.behavioural.mediator.AuctionMediatorImpl;
 import pl.designpatterns.behavioural.mediator.PersonBidder;
@@ -14,9 +10,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class MediatorExample extends DesignPatternTestTemplate {
 
     public MediatorExample() {
@@ -33,7 +26,7 @@ public class MediatorExample extends DesignPatternTestTemplate {
         RemoteBidder clientFromFrance = new RemoteBidder("Jean Michelle Jarre", "France", auctionMediator);
         RemoteBidder clientFromGermany = new RemoteBidder("Helmut Muller", "Germany", auctionMediator);
 
-        LinkedHashMap<Double ,AuctionCollegue> auctionMap = new LinkedHashMap<Double, AuctionCollegue>();
+        LinkedHashMap<Double ,AuctionColleague> auctionMap = new LinkedHashMap<Double, AuctionColleague>();
         auctionMap.put(10d, annConnor);
         auctionMap.put(12d, johnSmith);
         auctionMap.put(16d, clientFromFrance);
@@ -42,12 +35,12 @@ public class MediatorExample extends DesignPatternTestTemplate {
         auctionMap.put(19d, clientFromFrance);
         auctionMap.put(33d, clientFromGermany);
 
-        for (Map.Entry<Double, AuctionCollegue> entry : auctionMap.entrySet()) {
-            AuctionCollegue auctionCollegue = entry.getValue();
+        for (Map.Entry<Double, AuctionColleague> entry : auctionMap.entrySet()) {
+            AuctionColleague auctionColleague = entry.getValue();
             Double price = entry.getKey();
 
-            boolean accepted = auctionCollegue.bid(price);
-            System.out.println(auctionCollegue.getName() + " bids " + price + " and is bid accepted? : " + accepted );
+            boolean accepted = auctionColleague.bid(price);
+            System.out.println(auctionColleague.getName() + " bids " + price + " and is bid accepted? : " + accepted );
 
             System.out.println("[AUCTION} Current higest price: " + auctionMediator.getCurrentPrice() + " Current bidder: " + auctionMediator.getHighestBidderName());
 

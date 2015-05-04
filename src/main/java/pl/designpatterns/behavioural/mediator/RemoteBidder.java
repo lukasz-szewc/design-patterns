@@ -1,13 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.mediator;
 
-/**
- *
- */
-public class RemoteBidder implements AuctionCollegue {
+public class RemoteBidder implements AuctionColleague {
 
     private final String name;
     private final String country;
@@ -21,15 +14,12 @@ public class RemoteBidder implements AuctionCollegue {
 
     @Override
     public String getName() {
-        return name + " remotelly from " + country;
+        return name + " remotely from " + country;
     }
 
     @Override
     public boolean bid(double price) {
-        if (mediator.getCurrentPrice() >= price) {
-            return false;
-        }
-        return mediator.registerBid(this, price);
+        return mediator.getCurrentPrice() < price && mediator.registerBid(this, price);
     }
 
 }
