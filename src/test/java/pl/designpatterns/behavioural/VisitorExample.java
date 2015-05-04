@@ -9,23 +9,18 @@ import pl.designpatterns.template.DesignPatternTestTemplate;
 import java.util.Arrays;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class VisitorExample extends DesignPatternTestTemplate {
 
     public VisitorExample() {
         super("Visitor");
     }
 
-    @Test(description = "Simple example of acceptance of Visior by objects able to be visited")
-    public void testVisior() {
-
+    @Test(description = "Simple example of acceptance of Visitor by objects able to be visited")
+    public void testVisitor() {
         Visitor visitor = new TaggingVisitor();
 
         VisitedObject book = new Book("Meditations by Marcus Aurelius");
         VisitedObject computerGame = new ComputerGame("Diablo III");
-
 
         for (VisitedObject visitedObject : Arrays.asList(book, computerGame)) {
             visitedObject.accept(visitor);
