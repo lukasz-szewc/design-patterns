@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structural;
 
 import pl.designpatterns.structual.proxy.CachingProxy;
@@ -20,7 +16,7 @@ public class ProxyExample extends DesignPatternTestTemplate {
     public void testLoggingProxy() {
         Database database = new Database();
 
-        LoggingProxy loggingProxy = new LoggingProxy();
+        LoggingProxy loggingProxy = new LoggingProxy(database);
         loggingProxy.retrievePerson(1);
         database.retrievePerson(1);
 
@@ -32,7 +28,7 @@ public class ProxyExample extends DesignPatternTestTemplate {
     @Test(description = "Tests Proxy that works as cache object")
     public void testCachingProxy() {
 
-        CachingProxy cachingProxy = new CachingProxy();
+        CachingProxy cachingProxy = new CachingProxy(new Database());
         cachingProxy.retrievePerson(1);
         cachingProxy.retrievePerson(1);
         cachingProxy.retrievePerson(1);

@@ -10,8 +10,8 @@ package pl.designpatterns.structual.proxy;
 public class LoggingProxy implements PersonRetriever {
     private final Database database;
 
-    public LoggingProxy() {
-        database = new Database();
+    public LoggingProxy(Database database) {
+        this.database = database;
     }
 
     @Override

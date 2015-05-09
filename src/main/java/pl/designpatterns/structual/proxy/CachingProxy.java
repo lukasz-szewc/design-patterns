@@ -1,22 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.proxy;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- *
- */
 public class CachingProxy implements PersonRetriever {
 
     private Map<Integer, Person> personMap = new HashMap<Integer, Person>();
     private final Database database;
 
-    public CachingProxy() {
-        database = new Database();
+    public CachingProxy(Database database) {
+        this.database = database;
     }
 
     @Override
