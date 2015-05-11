@@ -11,7 +11,7 @@ public class DecoratorExample extends DesignPatternTestTemplate {
         super("Decorator");
     }
 
-    @Test(description = "Tests decorator object that is able to print number both ascending and descending")
+    @Test(description = "Tests decorator object that is able to print number both ascending and descending order")
     public void testDecorator() {
         SimpleNumberPrinter simpleNumberPrinter = new SimpleNumberPrinter();
 

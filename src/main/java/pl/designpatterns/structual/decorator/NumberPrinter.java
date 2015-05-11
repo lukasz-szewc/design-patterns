@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.decorator;
 
-/**
- *
- */
 public interface NumberPrinter {
 
     /**
@@ -14,6 +7,6 @@ public interface NumberPrinter {
      *
      * @param toNumber number to which printer will print.
      */
-    public void printNumbers(int toNumber);
+    void printNumbers(int toNumber);
 
 }
