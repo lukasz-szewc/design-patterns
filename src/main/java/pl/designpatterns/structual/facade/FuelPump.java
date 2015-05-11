@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.facade;
 
-/**
- *
- */
 public class FuelPump {
 
 
@@ -15,7 +8,7 @@ public class FuelPump {
         engine.pumpFuel(i);
     }
 
-    void stopPumingFuel() {
+    void stopPumpingFuel() {
         System.out.println("[FUEL PUMP] Stop pumping fuel...");
     }
 }

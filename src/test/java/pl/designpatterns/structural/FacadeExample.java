@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structural;
 
 import pl.designpatterns.structual.facade.SimpleMachine;
@@ -9,9 +5,6 @@ import pl.designpatterns.structual.facade.SimpleMachineFacade;
 import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class FacadeExample extends DesignPatternTestTemplate {
 
     public FacadeExample() {

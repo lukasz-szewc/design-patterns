@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.facade;
 
-/**
- *
- */
 public class Engine {
     private int shutdownRequest;
 
@@ -19,7 +12,7 @@ public class Engine {
     }
 
     void increaseMovement() {
-        System.out.println("[ENGINE] Inceasing movement...");
+        System.out.println("[ENGINE] Increasing movement...");
     }
 
     void shutDown() {
@@ -43,4 +36,7 @@ public class Engine {
         shutdownRequest++;
     }
 
+    void clutchConnected() {
+        System.out.println("[ENGINE] Clutch has been connected...");
+    }
 }

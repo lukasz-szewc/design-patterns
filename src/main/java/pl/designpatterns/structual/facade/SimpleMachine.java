@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.facade;
 
-/**
- *
- */
 public class SimpleMachine implements SimpleMachineFacade {
 
     private final Engine engine;
@@ -21,7 +14,8 @@ public class SimpleMachine implements SimpleMachineFacade {
 
     @Override
     public void turnOn() {
-        System.out.println("------");
+        System.out.println("[SYSTEM] received signal to turn machine on...");
+
         engine.provideAccessCode();
         engine.provideVoltage();
         fuelPump.provideFuel(engine, 5);
@@ -37,14 +31,14 @@ public class SimpleMachine implements SimpleMachineFacade {
 
     @Override
     public void turnOff() {
-        System.out.println("------");
+        System.out.println("[SYSTEM] received signal to turn machine off...");
 
         engine.shutDown();
         while (engine.isMoving()) {
             engine.decreaseSpeed();
         }
         clutch.disconnectShaft();
-        fuelPump.stopPumingFuel();
+        fuelPump.stopPumpingFuel();
 
         System.out.println("[SYSTEM] all components stopped...");
     }
