@@ -8,9 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class ObserverExample extends DesignPatternTestTemplate {
 
     public ObserverExample() {

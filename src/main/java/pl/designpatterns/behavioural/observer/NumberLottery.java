@@ -1,16 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.observer;
 
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
 
-/**
- *
- */
 public class NumberLottery implements LotterySubject {
 
     private final LinkedHashSet<LotteryObserver> observersSet;
