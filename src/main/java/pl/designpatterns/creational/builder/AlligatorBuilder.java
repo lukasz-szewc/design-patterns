@@ -1,15 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.creational.builder;
 
 import pl.designpatterns.creational.builder.Predator.PredatorName;
 
-/**
- *
- */
-public class AligatorBuilder implements PredatorBuilder {
+public class AlligatorBuilder implements PredatorBuilder {
     private Predator predator;
 
     @Override
@@ -21,13 +14,13 @@ public class AligatorBuilder implements PredatorBuilder {
     @Override
     public void createSharpTeeth() {
         validateBuilderState();
-        predator.setSharpTeeth("Many extremally sharp Teeth .");
+        predator.setSharpTeeth("Many extremely sharp Teeth.");
     }
 
     @Override
     public void createStrongMuscles() {
         validateBuilderState();
-        predator.setMuscleDescription("Extremally strong jaw, cannot say it is muscular animal.");
+        predator.setMuscleDescription("Extremely strong jaw, cannot say it is muscular animal.");
     }
 
     @Override
@@ -37,7 +30,7 @@ public class AligatorBuilder implements PredatorBuilder {
 
     @Override
     public void createLittlePredator() {
-        this.predator = new Predator(PredatorName.ALIGATOR);
+        this.predator = new Predator(PredatorName.ALLIGATOR);
     }
 
     private void validateBuilderState() throws IllegalStateException {

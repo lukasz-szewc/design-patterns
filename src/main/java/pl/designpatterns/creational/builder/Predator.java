@@ -1,29 +1,22 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.creational.builder;
 
-/**
- *
- */
 public class Predator {
 
     private final PredatorName predatorName;
     private String clawsDescription;
-    private String teethDesciption;
+    private String teethDescription;
     private String muscleDescription;
 
     Predator(PredatorName predatorName) {
         this.predatorName = predatorName;
     }
 
-    void setClaws(String decription) {
-        this.clawsDescription = decription;
+    void setClaws(String description) {
+        this.clawsDescription = description;
     }
 
     void setSharpTeeth(String teethDescription) {
-        this.teethDesciption = teethDescription;
+        this.teethDescription = teethDescription;
     }
 
     void setMuscleDescription(String muscleDescription) {
@@ -32,15 +25,16 @@ public class Predator {
 
     @Override
     public String toString() {
-        return "Predator{" + "predatorName=" + predatorName + ", clawsDescription=" + clawsDescription + ", teethDesciption=" + teethDesciption + ", muscleDescription=" + muscleDescription + '}';
+        return "Predator{" + "predatorName=" + predatorName + ", clawsDescription=" + clawsDescription +
+                ", teethDescription=" + teethDescription + ", muscleDescription=" + muscleDescription + '}';
     }
 
     enum PredatorName {
 
-        ALIGATOR {
+        ALLIGATOR {
             @Override
             public String toString() {
-                return "I am an aligathor from river Nile";
+                return "I am an alligator from river Nile";
             }
         }, TIGER {
             @Override

@@ -1,21 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.creational.builder;
 
-/**
- *
- */
 public interface PredatorBuilder {
 
-    public void createClaws();
+    void createClaws();
 
-    public void createSharpTeeth();
+    void createSharpTeeth();
 
-    public void createStrongMuscles();
+    void createStrongMuscles();
 
-    public Predator getResultOfBuilding();
+    Predator getResultOfBuilding();
 
-    public void createLittlePredator();
+    void createLittlePredator();
 }
