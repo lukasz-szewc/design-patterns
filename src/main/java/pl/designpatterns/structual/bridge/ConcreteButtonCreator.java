@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.bridge;
 
-/**
- *
- */
 public class ConcreteButtonCreator implements UserInterfaceButtonCreator {
     private final ActionProcessor actionProcessor;
 
@@ -14,9 +7,8 @@ public class ConcreteButtonCreator implements UserInterfaceButtonCreator {
         this.actionProcessor = actionProcessor;
     }
 
-
     @Override
-    public Button procudeAddObjectButton() {
+    public Button produceAddObjectButton() {
         return new Button() {
 
             @Override
@@ -27,7 +19,7 @@ public class ConcreteButtonCreator implements UserInterfaceButtonCreator {
     }
 
     @Override
-    public Button procudeEditObjectButton() {
+    public Button produceEditObjectButton() {
         return new Button() {
 
             @Override
@@ -38,7 +30,7 @@ public class ConcreteButtonCreator implements UserInterfaceButtonCreator {
     }
 
     @Override
-    public Button procudeDeleteObjectButton() {
+    public Button produceDeleteObjectButton() {
         return new Button() {
 
             @Override

@@ -9,6 +9,8 @@ import pl.designpatterns.structual.bridge.UserInterfaceButtonCreator;
 import pl.designpatterns.structual.bridge.VeryComplicatedActionProcessor;
 import pl.designpatterns.template.DesignPatternTestTemplate;
 import java.util.Arrays;
+import java.util.List;
+
 import org.testng.annotations.Test;
 
 public class BridgeExample extends DesignPatternTestTemplate {
@@ -17,28 +19,26 @@ public class BridgeExample extends DesignPatternTestTemplate {
         super("Bridge");
     }
 
-    @Test(description = "Tests bidge example")
+    @Test(description = "Tests bridge example")
     public void testBridge() {
-        SimpleActionProcessor simpleActionProcessor = new SimpleActionProcessor();
-        VeryComplicatedActionProcessor veryComplicatedActionProcessor = new VeryComplicatedActionProcessor();
-
-        for (ActionProcessor actionProcessor :
-                Arrays.asList(simpleActionProcessor, veryComplicatedActionProcessor)) {
-
+        for (ActionProcessor actionProcessor : processorsList()) {
             ConcreteButtonCreator concreteButtonCreator = new ConcreteButtonCreator(actionProcessor);
             FancyButtonCreator fancyButtonCreator = new FancyButtonCreator(actionProcessor);
 
             for (UserInterfaceButtonCreator creator : Arrays.asList(concreteButtonCreator, fancyButtonCreator)) {
-                creator.procudeAddObjectButton().processAction(Integer.valueOf(33));
-                creator.procudeEditObjectButton().processAction("Some input string");
-                creator.procudeDeleteObjectButton().processAction(new Object());
+                creator.produceAddObjectButton().processAction(33);
+                creator.produceEditObjectButton().processAction("Some input string");
+                creator.produceDeleteObjectButton().processAction(new Object());
 
             }
-            FancyButton button = (FancyButton) fancyButtonCreator.procudeAddObjectButton();
+            FancyButton button = (FancyButton) fancyButtonCreator.produceAddObjectButton();
             System.out.println(button.getFancyDescription());
-
         }
 
+    }
+
+    private List<ActionProcessor> processorsList() {
+        return Arrays.asList(new SimpleActionProcessor(), new VeryComplicatedActionProcessor());
     }
 
 }

@@ -1,17 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.bridge;
 
-/**
- *
- */
 public interface UserInterfaceButtonCreator {
 
-    Button procudeAddObjectButton();
+    Button produceAddObjectButton();
 
-    Button procudeEditObjectButton();
+    Button produceEditObjectButton();
 
-    Button procudeDeleteObjectButton();
+    Button produceDeleteObjectButton();
 }
