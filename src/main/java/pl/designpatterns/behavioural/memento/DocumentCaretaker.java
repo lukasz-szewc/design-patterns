@@ -3,9 +3,6 @@ package pl.designpatterns.behavioural.memento;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class DocumentCaretaker {
     private final List<DocumentMemento> storedMementoList;
 

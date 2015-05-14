@@ -3,9 +3,6 @@ package pl.designpatterns.behavioural.memento;
 import java.util.EnumMap;
 import java.util.Map;
 
-/**
- *
- */
 public class Document implements DocumentOriginator {
 
     private final Map<DocumentPart, StringBuilder> contentMap;
@@ -14,20 +11,39 @@ public class Document implements DocumentOriginator {
         this.contentMap = constructContentMap();
     }
 
-    public void writeInto(DocumentPart documentPart, String content) {
-        contentMap.get(documentPart).append(content);
+    public void writeHeader(String content) {
+        contentMap.get(DocumentPart.HEADER).append(content);
     }
 
-    public void clear(DocumentPart documentPart) {
-        contentMap.put(documentPart, new StringBuilder());
+    public void writeContent(String content) {
+        contentMap.get(DocumentPart.CONTENT).append(content);
     }
 
-    public void printContent() {
-        System.out.println(prepareContent());
+    public void writeFooter(String content) {
+        contentMap.get(DocumentPart.FOOTER).append(content);
     }
 
-    public String getContent() {
-        return prepareContent();
+    public void print() {
+        System.out.println(prepareDocument());
+    }
+
+    public void clearContent() {
+        contentMap.put(DocumentPart.CONTENT, new StringBuilder());
+    }
+
+    @Override
+    public DocumentMemento saveMemento() {
+        return new DocumentMemento(
+                contentMap.get(DocumentPart.HEADER).toString(),
+                contentMap.get(DocumentPart.CONTENT).toString(),
+                contentMap.get(DocumentPart.FOOTER).toString());
+    }
+
+    @Override
+    public void restoreState(DocumentMemento documentMemento) {
+        contentMap.put(DocumentPart.HEADER, new StringBuilder(documentMemento.getHeader()));
+        contentMap.put(DocumentPart.CONTENT, new StringBuilder(documentMemento.getContent()));
+        contentMap.put(DocumentPart.FOOTER, new StringBuilder(documentMemento.getFooter()));
     }
 
     private EnumMap<DocumentPart, StringBuilder> constructContentMap() {
@@ -39,7 +55,7 @@ public class Document implements DocumentOriginator {
         return map;
     }
 
-    private String prepareContent() {
+    private String prepareDocument() {
         StringBuilder documentBuilder = new StringBuilder();
         documentBuilder.append(contentMap.get(DocumentPart.HEADER));
         final StringBuilder content = contentMap.get(DocumentPart.CONTENT);
@@ -55,19 +71,7 @@ public class Document implements DocumentOriginator {
         return documentBuilder.toString();
     }
 
-    @Override
-    public DocumentMemento saveMemento() {
-        DocumentMemento documentMemento = new DocumentMemento(
-                contentMap.get(DocumentPart.HEADER).toString(),
-                contentMap.get(DocumentPart.CONTENT).toString(),
-                contentMap.get(DocumentPart.FOOTER).toString());
-        return documentMemento;
-    }
-
-    @Override
-    public void restoreState(DocumentMemento documentMemento) {
-        contentMap.put(DocumentPart.HEADER, new StringBuilder(documentMemento.getHeader()));
-        contentMap.put(DocumentPart.CONTENT, new StringBuilder(documentMemento.getContent()));
-        contentMap.put(DocumentPart.FOOTER, new StringBuilder(documentMemento.getFooter()));
+    private static enum DocumentPart {
+        HEADER, CONTENT, FOOTER
     }
 }
