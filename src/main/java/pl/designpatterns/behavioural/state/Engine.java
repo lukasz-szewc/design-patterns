@@ -1,20 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.state;
 
 import java.util.HashMap;
+import java.util.Map;
 
-/**
- *
- */
 public class Engine {
 
     public static final String STOPPED_STATE = "STOPPED";
     public static final String RUNNING_STATE = "RUNNING";
     private EngineState engineState;
-    private HashMap<String, EngineState> engineStateMap;
+    private Map<String, EngineState> engineStateMap;
 
     public Engine() {
         engineStateMap = new HashMap<String, EngineState>();
@@ -29,7 +23,6 @@ public class Engine {
 
     public void accelerate() {
         engineState.accelerate(this);
-
     }
 
     public void stop() {

@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.state;
 
-/**
- *
- */
 class StoppedEngineState implements EngineState {
 
     @Override
@@ -25,5 +18,4 @@ class StoppedEngineState implements EngineState {
     public void stop(Engine engine) {
         System.out.println("Stopping already stopped engine ... nothing happens");
     }
-
 }

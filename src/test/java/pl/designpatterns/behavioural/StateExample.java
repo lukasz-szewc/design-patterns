@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural;
 
 import pl.designpatterns.behavioural.state.Engine;
@@ -9,9 +5,6 @@ import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class StateExample extends DesignPatternTestTemplate {
 
     public StateExample() {
@@ -51,9 +44,9 @@ public class StateExample extends DesignPatternTestTemplate {
         Engine engine = new Engine();
         try {
             engine.accelerate();
+            Assert.fail();
         } catch (IllegalStateException e) {
             Assert.assertTrue(true);
         }
-
     }
 }
