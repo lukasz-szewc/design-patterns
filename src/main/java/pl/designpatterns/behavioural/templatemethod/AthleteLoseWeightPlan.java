@@ -1,11 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural.templatemethod;
 
-/**
- */
 public class AthleteLoseWeightPlan extends LoseWeightPlan {
 
     @Override
@@ -14,8 +8,7 @@ public class AthleteLoseWeightPlan extends LoseWeightPlan {
     }
 
     @Override
-    protected void prepareExcercise() {
+    protected void prepareExercise() {
         System.out.println("Five times per week - intensive workout - lifting weights");
     }
-
 }

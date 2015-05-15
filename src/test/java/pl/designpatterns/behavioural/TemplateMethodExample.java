@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.behavioural;
 
 import pl.designpatterns.behavioural.templatemethod.AthleteLoseWeightPlan;
@@ -12,9 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class TemplateMethodExample extends DesignPatternTestTemplate {
 
     public TemplateMethodExample() {
@@ -23,15 +16,12 @@ public class TemplateMethodExample extends DesignPatternTestTemplate {
 
     @Test(description = "Tests whether template method.")
     public void testEngineStarts() {
-
-        List<LoseWeightPlan> plans = Arrays.asList(new AthleteLoseWeightPlan(), new LightLoseWeightPlan());
-
-        for (LoseWeightPlan loseWeightPlan : plans) {
-
+        for (LoseWeightPlan loseWeightPlan : loseWeightPlans()) {
             loseWeightPlan.executePlan();
-
         }
-
     }
 
+    private List<LoseWeightPlan> loseWeightPlans() {
+        return Arrays.asList(new AthleteLoseWeightPlan(), new LightLoseWeightPlan());
+    }
 }
