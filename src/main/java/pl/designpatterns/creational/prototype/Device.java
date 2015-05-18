@@ -1,12 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.creational.prototype;
 
-/**
- *
- */
 public class Device implements Prototype<Device> {
 
     private String name;

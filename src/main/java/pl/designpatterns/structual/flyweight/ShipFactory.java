@@ -1,14 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.flyweight;
 
 import java.util.HashMap;
 
-/**
- *
- */
 public class ShipFactory {
 
     HashMap<ShipId, ShipFlyweight> shipMap = new HashMap<ShipId, ShipFlyweight>();

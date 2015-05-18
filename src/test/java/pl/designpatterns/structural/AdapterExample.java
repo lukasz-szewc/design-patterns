@@ -6,9 +6,6 @@ import java.util.List;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class AdapterExample extends DesignPatternTestTemplate {
 
     public AdapterExample() {

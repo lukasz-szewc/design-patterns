@@ -6,9 +6,6 @@ import pl.designpatterns.creational.factorymethod.Product;
 import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class FactoryMethodExample extends DesignPatternTestTemplate {
 
     public FactoryMethodExample() {

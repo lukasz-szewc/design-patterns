@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structural;
 
 import pl.designpatterns.structual.flyweight.ShipFactory;
@@ -10,9 +6,6 @@ import pl.designpatterns.template.DesignPatternTestTemplate;
 import java.util.Arrays;
 import org.testng.annotations.Test;
 
-/**
- *
- */
 public class FlyweightExample extends DesignPatternTestTemplate {
 
     public FlyweightExample() {

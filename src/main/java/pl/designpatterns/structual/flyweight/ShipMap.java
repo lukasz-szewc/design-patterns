@@ -1,15 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pl.designpatterns.structual.flyweight;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- *
- */
 public class ShipMap {
 
     LinkedHashMap<Integer, ShipFlyweight> linkedHashMap = new LinkedHashMap<Integer, ShipFlyweight>();
