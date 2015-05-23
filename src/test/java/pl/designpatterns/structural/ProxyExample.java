@@ -1,8 +1,10 @@
 package pl.designpatterns.structural;
 
+import org.testng.Assert;
 import pl.designpatterns.structual.proxy.CachingProxy;
 import pl.designpatterns.structual.proxy.Database;
-import pl.designpatterns.structual.proxy.LoggingProxy;
+import pl.designpatterns.structual.proxy.InvocationProxy;
+import pl.designpatterns.structual.proxy.Person;
 import pl.designpatterns.template.DesignPatternTestTemplate;
 import org.testng.annotations.Test;
 
@@ -12,30 +14,41 @@ public class ProxyExample extends DesignPatternTestTemplate {
         super("Proxy");
     }
 
-    @Test(description = "Tests proxy object that logs access to target object")
+    @Test(description = "Tests the same object is retrieved via proxy and without")
     public void testLoggingProxy() {
+        //given
         Database database = new Database();
 
-        LoggingProxy loggingProxy = new LoggingProxy(database);
-        loggingProxy.retrievePerson(1);
-        database.retrievePerson(1);
+        //when
+        InvocationProxy invocationProxy = new InvocationProxy(database);
 
-        loggingProxy.retrievePerson(10);
-        database.retrievePerson(10);
-
+        //then
+        Assert.assertEquals(database.retrievePerson(1), invocationProxy.retrievePerson(1));
     }
 
-    @Test(description = "Tests Proxy that works as cache object")
+    @Test(description = "Tests proxy is intercepting invocations to database")
+    public void testName() throws Exception {
+        //given
+        InvocationProxy invocationProxy = new InvocationProxy(new Database());
+
+        //when
+        invocationProxy.retrievePerson(1);
+        invocationProxy.retrievePerson(2);
+        invocationProxy.retrievePerson(3);
+
+        //then
+        Assert.assertEquals(invocationProxy.interceptedInvocationsNumber(), 3);
+    }
+
+    @Test(description = "Tests Cache contains person after invocation")
     public void testCachingProxy() {
-
+        //given
         CachingProxy cachingProxy = new CachingProxy(new Database());
-        cachingProxy.retrievePerson(1);
-        cachingProxy.retrievePerson(1);
-        cachingProxy.retrievePerson(1);
 
-        cachingProxy.retrievePerson(10);
-        cachingProxy.retrievePerson(10);
+        //when
+        Person person = cachingProxy.retrievePerson(1);
 
+        //then
+        Assert.assertTrue(cachingProxy.contains(person));
     }
-
 }

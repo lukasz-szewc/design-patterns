@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CachingProxy implements PersonRetriever {
 
-    private Map<Integer, Person> personMap = new HashMap<Integer, Person>();
+    private Map<Integer, Person> cashedPeopleMap = new HashMap<Integer, Person>();
     private final Database database;
 
     public CachingProxy(Database database) {
@@ -14,20 +14,19 @@ public class CachingProxy implements PersonRetriever {
 
     @Override
     public Person retrievePerson(int id) {
-        Person personFromCache = personMap.get(id);
+        Person personFromCache = cashedPeopleMap.get(id);
         if (personFromCache != null) {
-            System.out.println("Retrieved object from cache: " + personFromCache);
             return personFromCache;
         } else {
-
             Person retrievedPerson = database.retrievePerson(id);
-
             if (retrievedPerson != null) {
-                personMap.put(id, retrievedPerson);
-                System.out.println("Caching object in cache : " + retrievedPerson);
+                cashedPeopleMap.put(id, retrievedPerson);
             }
             return retrievedPerson;
         }
+    }
 
+    public boolean contains(Person person) {
+        return cashedPeopleMap.containsValue(person);
     }
 }
